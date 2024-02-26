@@ -1,5 +1,5 @@
 # Twitter-Snowflake-implementation
-Twitter(X) 雪花算法的 Java 和 Go 实现
+Twitter(X) 雪花算法的 Java 和 Go 实现，可生成分布式分布式全局唯一 ID。
 
 ```
 /**
