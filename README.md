@@ -19,4 +19,4 @@ Twitter 的雪花算法使用 Scala 实现[1]，该项目使用 Java 和 GO 对�
 ```
 ## 贡献
 
-如果您有任何问题，欢迎提交 merge request 或 issue
+如果您有任何问题，欢迎提交 merge request 或 issue。
