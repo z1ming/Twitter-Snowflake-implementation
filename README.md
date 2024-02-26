@@ -1,18 +1,19 @@
-# Twitter-Snowflake-implementation
-Twitter(X) 雪花算法的 Java 和 Go 实现，可生成分布式全局唯一 ID。
+# 实现 Twitter Snowflake 算法（Java，Go）
+
+Twitter 的雪花算法使用 Scala 实现[1]，该项目使用 Java 和 GO 对其进行了实现。
+
+## Twitter Snowflake 算法思想
+
+采用 64 位长整形实现，划分为四个区域：
+
+- 符号，占用 1 位
+- 毫秒级时间戳，占用 41 位
+- 5 位数据中心 + 5 位机器 ID，占用 10 位
+- 序列号，占用 12 位
 
 ```
-/**
- * 0-00000000000000000000000000000000000000000-0000000000-000000000000
- * | |_______________________________________| |________| |__________|
- * 1               41                              10          12
- * 符号            时间戳                      5数据中心 + 5机器  序列号
- */
+ +------+--------------------+-----------------------+----------+
+ | sign | delta milliSeconds | dataCenter | workerId | sequence |
+ +------+--------------------+-----------------------+----------+
+   1bit        41bits                  10bits           12bits
 ```
-
-### 参考
-
-1. [Twitter Snowflake](https://github.com/twitter-archive/snowflake)
-2. [Leaf——美团点评分布式ID生成系统](https://tech.meituan.com/2017/04/21/mt-leaf.html)
-2. [百度 UidGenerator](https://github.com/baidu/uid-generator/blob/master/README.zh_cn.md)
-3. [滴滴 Tinyid](https://github.com/didi/tinyid)
